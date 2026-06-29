@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pippin Command Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:#f1ece1;color:#3a3340;padding:34px 30px 70px;}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto}
+.head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:8px}
+.brand{font-family:'Fredoka';font-weight:700;font-size:34px;color:#3a3340}
+.brand .lav{color:#a898c8}
+.date{font-weight:700;color:#8a8170;font-size:15px}
+.north{background:linear-gradient(100deg,#a898c8,#bda9da);color:#fff;border-radius:20px;padding:16px 24px;margin:14px 0 26px;font-weight:700;display:flex;gap:26px;flex-wrap:wrap;align-items:center}
+.north b{font-family:'Fredoka';font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.card{background:#fff;border-radius:24px;padding:26px 28px;box-shadow:0 12px 34px rgba(120,100,150,.10)}
+.card h2{font-family:'Fredoka';font-weight:600;font-size:21px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.col4{grid-column:span 4}.col6{grid-column:span 6}.col8{grid-column:span 8}.col12{grid-column:span 12}
+@media(max-width:880px){.col4,.col6,.col8{grid-column:span 12}}
+.kpi{font-family:'Fredoka';font-weight:700;font-size:46px;line-height:1;color:#3a3340}
+.kpi small{font-size:18px;color:#8a8170;font-weight:600}
+.sub{color:#8a8170;font-size:14px;font-weight:600;margin-top:6px}
+.bar{height:12px;border-radius:8px;background:#eee6d8;margin-top:14px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:8px}
+.bar.lav i{background:linear-gradient(90deg,#a898c8,#cdbfe6)}
+.bar.org i{background:linear-gradient(90deg,#f87222,#f9a06a)}
+.li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #f0ece3;font-weight:600}
+.li:last-child{border:none}
+.dot{width:9px;height:9px;border-radius:50%;background:#f87222;margin-top:7px;flex:none}
+.dot.ok{background:#52b97a}.dot.lav{background:#a898c8}
+.pill{display:inline-block;background:#f3eefb;color:#7a6a9c;border-radius:30px;padding:3px 12px;font-size:13px;font-weight:700;margin-left:auto;white-space:nowrap}
+.pill.ok{background:#e6f5ec;color:#3f9c66}
+.muted{color:#a79f90;font-size:13px;font-weight:600;font-style:italic;margin-top:10px}
+table{width:100%;border-collapse:collapse}
+td{padding:10px 0;border-bottom:1px solid #f0ece3;font-weight:600}
+td.r{text-align:right;color:#8a8170}
+.qbtn{display:inline-block;background:#efe9fb;color:#6f5f8a;border-radius:14px;padding:11px 16px;font-weight:700;margin:6px 8px 0 0;font-size:14px}
+.qbtn.org{background:#fdeee2;color:#c4561a}
+.flow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-weight:700;color:#8a8170}
+.flow b{background:#f3eefb;color:#6f5f8a;border-radius:12px;padding:8px 14px;font-family:'Fredoka';font-weight:600}
+.flow .ar{color:#cbb8e0}
+</style><script>
+(function(){
+  if (sessionStorage.getItem('pip_ok') === '1') return;
+  var p = prompt('Pippin Dashboard – Passwort:');
+  if (p !== 'pippin2026') {
+    document.documentElement.innerHTML = '<body style="font-family:sans-serif;padding:48px;color:#3a3340">🔒 Kein Zugriff.</body>';
+    throw new Error('locked');
+  }
+  sessionStorage.setItem('pip_ok','1');
+})();
+</script></head><body><div class="wrap">
+
+<div class="head">
+  <div class="brand">Pippin <span class="lav">Command Center</span></div>
+  <div class="date">Montag, 29.06.2026 · 08:30 Uhr</div>
+</div>
+<div class="north">
+  <span>🌟 <b>Nordstern bis Ende 2026:</b></span>
+  <span>40.000 Follower &nbsp;·&nbsp; 10.000 €/Monat &nbsp;·&nbsp; bekannteste Windelfrei-Marke im DACH-Raum</span>
+</div>
+
+<div class="grid">
+
+  <div class="card col12">
+    <h2>📅 Redaktionsplan — was läuft (live aus Blotato)</h2>
+    <table>
+      <tr style="color:#a79f90;font-size:13px"><td>Tag</td><td>Zeit</td><td>Typ</td><td>Titel</td><td class="r">Status</td></tr>
+      <tr><td>Mo 29.06.</td><td>06:00</td><td>Story</td><td><a href="https://www.instagram.com/stories/pippin_windelfreimaus/3930002293299466175" target="_blank" style="text-decoration:underline">Rebranding-Ausverkauf – Story 1</a></td><td class="r"><span class="pill ok">live</span></td></tr><tr><td>Mo 29.06.</td><td>09:00</td><td>Karussell</td><td>Rebranding-Ausverkauf (siebenKÄSEhoch → Pippin)</td><td class="r"><span class="pill">geplant</span></td></tr><tr><td>Mo 29.06.</td><td>10:00</td><td>Story</td><td>Rebranding-Ausverkauf – Story 2</td><td class="r"><span class="pill">geplant</span></td></tr><tr><td>Mo 29.06.</td><td>14:00</td><td>Story</td><td>Rebranding-Ausverkauf – Story 3</td><td class="r"><span class="pill">geplant</span></td></tr><tr><td>Mo 29.06.</td><td>19:00</td><td>Story</td><td>Rebranding-Ausverkauf – Story 5 (CTA Shop)</td><td class="r"><span class="pill">geplant</span></td></tr>
+    </table>
+    <div class="muted">Blotato (live) + Pipeline — @pippin_windelfreimaus · Stand 29.06.2026</div>
+  </div>
+
+  <div class="card col4">
+    <h2>📈 Instagram</h2>
+    <div class="kpi">937<small> / 40,000</small></div>
+    <div class="sub">@pippin_windelfreimaus · 2% zum Ziel</div>
+    <div class="bar lav"><i style="width:2%"></i></div>
+    <div class="muted">Reichweite/Woche: — · Live-Zahlen via pippin-performance-analyst (Apify)</div>
+  </div>
+
+  <div class="card col4">
+    <h2>💶 Verkauf (Monat)</h2>
+    <div class="kpi">0 €<small> / 10,000 €</small></div>
+    <div class="sub">0 Bestellungen · 1% zum Ziel</div>
+    <div class="bar org"><i style="width:1%"></i></div>
+    <div class="muted">Platzhalter – wird von pippin-commerce / Shopify befüllt</div>
+  </div>
+
+  <div class="card col4">
+    <h2>📦 Produkte</h2>
+    <table><tr><td>Premium Überhose One Size (6 Farben)</td><td class="r">120 Stk</td><td class="r">20/Farbe</td></tr><tr><td>Premium Überhose Newborn (6 Farben)</td><td class="r">120 Stk</td><td class="r">20/Farbe</td></tr><tr><td>Premium Trainer SideSnap (6 Farben)</td><td class="r">120 Stk</td><td class="r">20/Farbe</td></tr><tr><td>Saugeinlage</td><td class="r">20 Stk</td><td class="r">auf Lager</td></tr><tr><td>Wanneneinlage</td><td class="r">20 Stk</td><td class="r">auf Lager</td></tr><tr><td>Wetbag Premium (3 Farben)</td><td class="r">60 Stk</td><td class="r">20/Farbe</td></tr><tr><td>Wetbag Premium POD (3 Farben)</td><td class="r">60 Stk</td><td class="r">20/Farbe</td></tr></table>
+    <div class="muted">Shopify (live) – Restposten-Ausverkauf, 20 Stk/Variante, Pippin-gebrandet</div>
+  </div>
+
+  <div class="card col6">
+    <h2>✅ To-Do heute</h2>
+    <a class="li" href="../reel-pipeline/02-rohmaterial/_LIESMICH-Drehtag.md"><span class="dot"></span><span>10 von 10 Reels noch aufnehmen (Drehtag)</span></a><a class="li" href="../karussell-pipeline/bereit-zum-posten/"><span class="dot"></span><span>5 Karussell(s) bereit zum Posten</span></a><a class="li" href="../content-saeulen.md"><span class="dot"></span><span>CTA-Keyword festlegen (noch offen)</span></a><a class="li" href="../../../scripts/pippin-config.sh"><span class="dot"></span><span>Blotato mit @pippin_windelfreimaus verbinden</span></a>
+  </div>
+
+  <div class="card col6">
+    <h2>🎬 Drehtag — Reels (0/10 aufgenommen)</h2>
+    <a class="li" href="../reel-pipeline/01-skripte/reel-01-baby-weint-kein-versagen/skript.md"><span class="dot "></span><span>Reel R1 — Dein Baby weint nicht, weil du versagst&quot;</span><span class="pill">noch drehen</span></a><a class="li" href="../reel-pipeline/01-skripte/reel-02-windelfrei-unterwegs/skript.md"><span class="dot "></span><span>Reel R2 — Windelfrei unterwegs – mit drei Kindern&quot;</span><span class="pill">noch drehen</span></a><a class="li" href="../reel-pipeline/01-skripte/reel-03-kein-trockenwerd-tool/skript.md"><span class="dot "></span><span>Reel R3 — Windelfrei ist KEIN Trockenwerd-Tool&quot;</span><span class="pill">noch drehen</span></a><a class="li" href="../reel-pipeline/01-skripte/reel-04-warum-pippin-gegruendet/skript.md"><span class="dot "></span><span>Reel R4 — Warum ich Pippin gegründet habe&quot;</span><span class="pill">noch drehen</span></a><a class="li" href="../reel-pipeline/01-skripte/reel-05-3-leise-signale/skript.md"><span class="dot "></span><span>Reel R5 — 3 leise Signale, dass dein Baby mal muss&quot;</span><span class="pill">noch drehen</span></a><a class="li" href="../reel-pipeline/01-skripte/reel-06-groesster-fehler-start/skript.md"><span class="dot "></span><span>Reel R6 — Der größte Fehler beim Windelfrei-Start&quot;</span><span class="pill">noch drehen</span></a><a class="li" href="../reel-pipeline/01-skripte/reel-07-wenn-es-nicht-klappt/skript.md"><span class="dot "></span><span>Reel R7 — Was tun, wenn es plötzlich nicht mehr klappt?&quot;</span><span class="pill">noch drehen</span></a><a class="li" href="../reel-pipeline/01-skripte/reel-08-hybridwindel-erklaert/skript.md"><span class="dot "></span><span>Reel R8 — Hybridwindel erklärt: so funktioniert sie&quot;</span><span class="pill">noch drehen</span></a><a class="li" href="../reel-pipeline/01-skripte/reel-09-windelfrei-und-schlaf/skript.md"><span class="dot "></span><span>Reel R9 — Windelfrei &amp; Schlaf: meine ehrliche Erfahrung&quot;</span><span class="pill">noch drehen</span></a><a class="li" href="../reel-pipeline/01-skripte/reel-10-pausen-kein-scheitern/skript.md"><span class="dot "></span><span>Reel R10 — Pausen sind kein Scheitern&quot;</span><span class="pill">noch drehen</span></a>
+    <div style="margin-top:14px">
+      <a class="qbtn org" href="../reel-pipeline/02-rohmaterial/_LIESMICH-Drehtag.md">📂 Rohmaterial ablegen (Anleitung)</a>
+    </div>
+  </div>
+
+  <div class="card col8">
+    <h2>🔎 Marktrecherche (letzter Scan)</h2>
+    <div style="font-weight:600;line-height:1.6;color:#5f5766">Noch kein Scan gelaufen — der erste `pippin-marktanalyse`-Lauf füllt: was gerade funktioniert (Hooks/Formate/Themen) + 3–5 konkrete Content-Ideen für Pippin.</div>
+    <div style="margin-top:12px"><a class="qbtn" href="../marktanalyse-mitbewerber.md">→ Volle Marktanalyse öffnen</a></div>
+  </div>
+
+  <div class="card col4">
+    <h2>📬 Posteingang heute</h2>
+    <div class="li"><span class="dot lav"></span><span><b>kit.com</b> — The easiest way to capture more emails</span><span class="pill">Sa 11:56</span></div><div class="li"><span class="dot lav"></span><span><b>CopeCart</b> — Die ersten Schritte bei CopeCart einrichten</span><span class="pill">Sa 06:01</span></div><div class="li"><span class="dot lav"></span><span><b>Pippin-Funnel</b> — Freebie ausgeliefert: „Deine Windelfrei-Starthilfe&quot;</span><span class="pill">Fr 20:46</span></div><div class="li"><span class="dot lav"></span><span><b>Anne (Test)</b> — Test</span><span class="pill">Fr 20:13</span></div>
+  </div>
+
+  <div class="card col12">
+    <h2>🗂 Pipelines</h2>
+    <div class="flow" style="margin-bottom:16px">
+      <span style="font-family:'Fredoka';color:#a898c8">Karussells:</span>
+      <b>0 zur Prüfung</b><span class="ar">→</span><b>5 bereit</b><span class="ar">→</span><b>1 gepostet</b>
+    </div>
+    <div class="flow">
+      <span style="font-family:'Fredoka';color:#a898c8">Reels:</span>
+      <b>10 Skripte</b><span class="ar">→</span><b>0 gedreht</b><span class="ar">→</span><b>0 fertig</b><span class="ar">→</span><b>0 gepostet</b>
+    </div>
+    <div style="margin-top:18px">
+      <a class="qbtn org" href="../redaktionsplan/KW27-2026-06-29.md">📅 Redaktionsplan KW27-2026-06-29</a>
+      <a class="qbtn" href="../content-saeulen.md">🧱 Content-Säulen</a>
+      <a class="qbtn" href="../growth/growth-plan.md">📊 Growth-Plan</a>
+      <a class="qbtn" href="../karussell-pipeline/zur-pruefung/">🎨 Karussells prüfen</a>
+      <a class="qbtn" href="../reel-pipeline/01-skripte/">📝 Reel-Skripte</a>
+    </div>
+  </div>
+
+</div>
+<div class="muted" style="text-align:center;margin-top:30px">Automatisch gebaut von scripts/pippin-dashboard-build.py · zuletzt: Montag, 29.06.2026 · 08:30 Uhr</div>
+</div></body></html>
